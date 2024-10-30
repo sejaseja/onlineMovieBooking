@@ -1,0 +1,82 @@
+.booking-container {
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 30px;
+  border: 2px solid #2c3e50;
+  border-radius: 10px;
+  background-color: lightyellow;
+  text-align: center;
+}
+
+.form-group {
+  margin-bottom: 20px;
+  text-align: left;
+}
+
+.ticket-counter {
+  display: flex;
+  align-items: center;
+}
+
+.ticket-counter button {
+  background-color: #27ae60;
+  color: white;
+  border: none;
+  border-radius: 50%;
+  width: 30px;
+  height: 30px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.ticket-counter button:hover {
+  background-color: #219a55;
+}
+
+.ticket-counter input {
+  width: 50px;
+  margin: 0 10px;
+  padding: 5px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.ticket-counter input:focus {
+  outline: none;
+  border-color: #27ae60;
+}
+
+.text-danger {
+  color: #e74c3c;
+}
+
+.mat-form-field {
+  width: 100%;
+}
+
+button[type="submit"] {
+  background-color: #27ae60;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background-color 0.3s ease;
+}
+
+button[type="submit"]:hover {
+  background-color: #219a55;
+}
+
+.mat-radio-button {
+  margin-right: 10px;
+}
+
+.mat-checkbox {
+  margin-bottom: 5px;
+}
+
+.age {
+  width: 100%;
+}

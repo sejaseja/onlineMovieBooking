@@ -1,0 +1,96 @@
+<div class="booking-container">
+  <h2>Online Movie Ticket Booking</h2>
+
+  <form [formGroup]="bookingForm" (ngSubmit)="submitForm()">
+    <div class="form-group">
+      <mat-form-field>
+        <mat-label>City</mat-label>
+        <mat-select formControlName="city" id="city">
+          <mat-option value="Brampton">Brampton</mat-option>
+          <mat-option value="Malton">Malton</mat-option>
+          <mat-option value="Toronto">Toronto</mat-option>
+          <mat-option value="Oakville">Oakville</mat-option>
+        </mat-select>
+      </mat-form-field>
+    </div>
+
+    <div class="form-group">
+      <label>Theatre Location:</label><br>
+      <mat-radio-group formControlName="location" id="location">
+        <mat-radio-button value="Downtown Complex">Downtown Complex</mat-radio-button>
+        <mat-radio-button value="Super Mall">Super Mall</mat-radio-button>
+      </mat-radio-group>
+    </div>
+
+    <div class="form-group">
+      <label for="movies">Select Movie:</label>
+      <mat-form-field>
+        <mat-label>Select Movie</mat-label>
+        <mat-select formControlName="movie" id="movie">
+          <mat-option value="Dilwale Dulhaniya Le Jayenge">Dilwale Dulhaniya Le Jayenge</mat-option>
+          <mat-option value="3-Idiots">3-Idiots</mat-option>
+          <mat-option value="PK">PK</mat-option>
+          <mat-option value="Kuch Kuch Hota Hai">Kuch Kuch Hota Hai</mat-option>
+        </mat-select>
+      </mat-form-field>
+    </div>
+
+    <div class="form-group">
+      <label for="date">Date:</label>
+      <input type="date" formControlName="date" id="date" class="form-control">
+    </div>
+
+    <div class="form-group">
+      <label for="tickets">Number of Tickets:</label>
+      <div class="ticket-counter">
+        <button mat-button type="button" (click)="decrementTickets()">-</button>
+        <input type="number" formControlName="tickets" id="tickets" class="form-control" [ngStyle]="{'background-color': bookingForm.get('tickets')?.hasError('min') ? 'red' : 'white'}">
+        <button mat-button type="button" (click)="incrementTickets()">+</button>
+      </div>
+      <span *ngIf="bookingForm.get('tickets')?.hasError('min')" class="text-danger">Number of tickets cannot be negative.</span>
+    </div>
+
+  
+
+    <div class="form-group">
+      <mat-form-field>
+        <mat-label>First Name</mat-label>
+        <input matInput formControlName="firstName" id="firstName">
+      </mat-form-field>
+    </div>
+
+    <div class="form-group">
+      <mat-form-field>
+        <mat-label>Last Name</mat-label>
+        <input matInput formControlName="lastName" id="lastName">
+      </mat-form-field>
+    </div>
+
+    <div class="form-group">
+      <mat-form-field>
+        <mat-label>Email</mat-label>
+        <input matInput formControlName="email" id="email" type="email">
+      </mat-form-field>
+    </div>
+
+    <div class="form-group">
+      <label>Gender:</label><br>
+      <mat-radio-group formControlName="gender" id="gender">
+        <mat-radio-button value="male">Male</mat-radio-button>
+        <mat-radio-button value="female">Female</mat-radio-button>
+      </mat-radio-group>
+    </div>
+
+    <div class="form-group">
+      <mat-form-field class="age">
+        <mat-label>Age</mat-label>
+        <input matInput formControlName="age" id="age" type="number" min="20">
+        <mat-hint align="end">You must be at least 20 years old to book a ticket.</mat-hint>
+      </mat-form-field>
+    </div>
+
+    <div class="form-group">
+      <button mat-button type="submit" [disabled]="bookingForm.invalid">Submit</button>
+    </div>
+  </form>
+</div>
