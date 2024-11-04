@@ -1,0 +1,20 @@
+<div class="confirmation-container">
+  <h2>Confirmation Page</h2>
+
+  <p>Transaction successful!</p>
+
+  <div class="details">
+    <p><strong>First Name:</strong> {{ bookingDetails?.firstName }}</p>
+    <p><strong>Last Name:</strong> {{ bookingDetails?.lastName }}</p>
+    <p><strong>City:</strong> {{ bookingDetails?.city }}</p>
+    <p><strong>Age:</strong> {{ bookingDetails?.age }}</p>
+    <p><strong>Email:</strong> {{ bookingDetails?.email }}</p>
+    <p><strong>Movie:</strong> {{ bookingDetails?.movie }}</p>
+    <p><strong>Theature Location:</strong> {{ bookingDetails?.location }}</p>
+    <p><strong>Date:</strong> {{ bookingDetails?.date }}</p>
+    <p><strong>Number of tickets:</strong> {{ bookingDetails?.tickets }}</p>
+    <p><strong>Total Amount:</strong> {{ bookingDetails?.CalculatetotalAmount }}</p>
+  </div>
+
+  <button mat-button (click)="goBack()">Back</button>
+</div>
